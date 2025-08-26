@@ -2,7 +2,7 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Followers Golden Store</title>
   <style>
     html, body {
@@ -12,15 +12,26 @@
       overflow: hidden;
     }
     iframe {
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 100vh;
       border: none;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://fancy-resonance-be93.assilimohtar.workers.dev/index.html" 
-          title="Followers Golden Store">
-  </iframe>
+  <iframe src="https://fancy-resonance-be93.assilimohtar.workers.dev/index.html"
+          title="Followers Golden Store"></iframe>
+
+  <script>
+    // يجعل iframe يملأ الشاشة عند تغيير حجم الهاتف أو التدوير
+    const iframe = document.querySelector('iframe');
+    function resizeIframe() {
+      iframe.style.width = window.innerWidth + 'px';
+      iframe.style.height = window.innerHeight + 'px';
+    }
+    window.addEventListener('resize', resizeIframe);
+    resizeIframe();
+  </script>
 </body>
 </html>
